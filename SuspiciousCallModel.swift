@@ -12,7 +12,7 @@ class SuspiciousCallModel : NSObject {
     var suspiciousCalls = [String]()
     
     override init() {
-        suspiciousCalls = ["​1-425-950-1212"]
+        suspiciousCalls = ["​1-425-950-1212", "1-732-222-2981"]
         super.init()
     }
     

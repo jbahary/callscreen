@@ -24,27 +24,43 @@ class ViewController: UIViewController {
                 if let _ = error {
                     print("\(String(describing: error?.localizedDescription))");
                 }
-                if(status == CXCallDirectoryManager.EnabledStatus.enabled){
-                    let contactList : [String:String] = [
-                        "17012341234":"Joe Smith",
-                        "17012345678":"John Doe",
-                        "17322222981":"Jim Collins"
-                    ]
-                    let blackList : [String:String] = [
-                        "17055667788":"George Keyes",
-                        "17033441122":"Irma Lee",
-                        //               "17022334455":"Ron Kevins"
-                        //                 "17322222981":"Ron Kevins"
-                    ]
+  //              if(status == CXCallDirectoryManager.EnabledStatus.enabled){
+ 
                     
                     let ud = UserDefaults(suiteName: "group.callscreen")
                     if ud == nil
                     {
                         return
                     }
+                    var blackList = [String: String]()
+   
+                    for str in self.scams.scamCalls {
+                        let stringArray = str.components(
+                            separatedBy: CharacterSet(charactersIn: "01234567890").inverted)
+                        let result = NSArray(array: stringArray).componentsJoined(by: "")
+                       
+                        blackList[result] = "spam"
+                        
+                    }
                     
-                    ud!.setValue(contactList, forKey: "ContactList");
-                    ud!.setValue(blackList, forKey: "BlackList");
+                    var contactList = [String: String]()
+                    for str in self.suspicious.suspiciousCalls {
+                        let stringArray = str.components(
+                            separatedBy: CharacterSet(charactersIn: "01234567890").inverted)
+                        let result = NSArray(array: stringArray).componentsJoined(by: "")
+                        
+                       contactList[result] = "suspicious"
+                        
+                    }
+                    
+                    let black = blackList
+                    let contacts = contactList
+                
+               
+                
+                
+                    ud!.setValue(contacts, forKey: "ContactList");
+                    ud!.setValue(black, forKey: "BlackList");
                     ud!.synchronize();
                     
                     
@@ -56,40 +72,10 @@ class ViewController: UIViewController {
                         }
                     })
                     print("OK Can use")
-                }
+ //               }
             };
             
             return;
-            let contactList : [String:String] = [
-                "17012341234":"Joe Smith",
-                "17012345678":"John Doe",
-                "17322222981":"Jim Collins"
-            ]
-            let blackList : [String:String] = [
-                "17055667788":"George Keyes",
-                "17033441122":"Irma Lee",
-                //               "17022334455":"Ron Kevins"
-                //                 "17322222981":"Ron Kevins"
-            ]
-           
-            let ud = UserDefaults(suiteName: "group.callscreen")
-            if ud == nil
-            {
-                return
-            }
-          
-            ud!.setValue(contactList, forKey: "ContactList");
-            ud!.setValue(blackList, forKey: "BlackList");
-            ud!.synchronize();
-            
-
-            
-            
-            manager.reloadExtension(withIdentifier: extensionIdentifer, completionHandler: { error in
-                if let _ = error{
-                    print("A error \(error?.localizedDescription as String!)");
-                }
-            })
         }
     }
 

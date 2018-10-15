@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ef8-VT-R9g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="callscreen" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,9 +33,153 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="bottomtapicon_settings" selectedImage="bottomtapicon_settings" id="S9A-6C-J8Q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="980" y="26.53673163418291"/>
+        </scene>
+        <!--Scam Phone Number Table View-->
+        <scene sceneID="xKX-dX-kmX">
+            <objects>
+                <tableViewController id="NtS-1Z-lvu" customClass="ScamPhoneNumberTableView" customModule="callscreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uG6-2a-GNJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pwa-wS-iVi">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pwa-wS-iVi" id="TCz-C6-AXu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NtS-1Z-lvu" id="0Hu-4d-uWW"/>
+                            <outlet property="delegate" destination="NtS-1Z-lvu" id="K4d-Xk-Oks"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="CX8-KE-f8r"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5q9-IZ-7d2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2636" y="48.125937031484263"/>
+        </scene>
+        <!--Suspicious Calls-->
+        <scene sceneID="XE6-CE-FSr">
+            <objects>
+                <tableViewController id="9Ui-0i-n7J" customClass="SuspiciousPhoneNumberTableView" customModule="callscreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YtQ-tS-uGu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="s1H-Nm-q8x">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s1H-Nm-q8x" id="fmr-FO-LcK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Ui-0i-n7J" id="X1U-W9-P5Z"/>
+                            <outlet property="delegate" destination="9Ui-0i-n7J" id="EFy-7s-xQY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Suspicious Calls" id="wdI-Bq-c11"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mb1-l5-kj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5159.1999999999998" y="30.134932533733135"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8DA-UF-ghG">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ef8-VT-R9g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aiI-YF-21B">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tZf-bp-Ui8"/>
+                        <segue destination="Fgd-HZ-g26" kind="relationship" relationship="viewControllers" id="KEx-Qw-AyF"/>
+                        <segue destination="7CR-Ru-7Mn" kind="relationship" relationship="viewControllers" id="fOu-W3-TEU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHM-g9-ixJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="26.53673163418291"/>
+        </scene>
+        <!--Scam-->
+        <scene sceneID="8pL-4l-yz8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fgd-HZ-g26" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scam" image="bottomtapicon_phone" selectedImage="bottomtapicon_phone" id="QZf-6u-LJx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WxP-3J-n1x">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NtS-1Z-lvu" kind="relationship" relationship="rootViewController" id="4gO-XZ-HYG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMx-Fb-BJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1696.8" y="48.125937031484263"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A8U-9y-d6b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MKK-w5-JUz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mx2-BX-48C">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7CR-Ru-7Mn" kind="relationship" relationship="rootViewController" id="URm-8g-c07"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPb-6C-gbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3280.8000000000002" y="30.134932533733135"/>
+        </scene>
+        <!--Suspicious-->
+        <scene sceneID="5TO-M7-neq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7CR-Ru-7Mn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Suspicious" image="bottomtapicon_help" selectedImage="bottomtapicon_help" id="jkS-bR-Wq9"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="J4X-ZS-gbt"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jVw-Fl-yxY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Ui-0i-n7J" kind="relationship" relationship="rootViewController" id="J0z-6N-r5X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8G-Q3-Etv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4220" y="30.134932533733135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bottomtapicon_help" width="20" height="20"/>
+        <image name="bottomtapicon_phone" width="20" height="20"/>
+        <image name="bottomtapicon_settings" width="20" height="20"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fOu-W3-TEU"/>
+    </inferredMetricsTieBreakers>
 </document>
